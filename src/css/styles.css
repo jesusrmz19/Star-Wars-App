@@ -4,16 +4,98 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #000;
+    background-color: #090909;
     margin: 0;
     padding: 0;
     font-family: Montserrat, sans-serif;
     color: yellow;
 }
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.app-container {
+    display: flex;
+}
 .logo {
     background: url("images/Star_Wars_Logo.svg") center no-repeat;
-    background-size: 25%;
-    height: 200px;
+    background-size: 90%;
+    height: 120px;
     width: 100%;
-    border: solid 1px red;
+}
+.navbar__container {
+    height: 100vh;
+    width: 250px;
+    background: #000;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar {
+    display: flex; 
+    flex-direction: column;
+}
+.navbar a {
+    color: yellow;
+    text-decoration: none;
+}
+.menuitem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    transition: background-color, color, ease 0.2s;
+    cursor: pointer;
+}
+.menuitem:hover {
+    background-color: yellow;
+    color: black;
+    font-weight: 800;
+}
+.menuitem.active {
+    background-color: yellow;
+    color: black;
+    font-weight: 800;
+}
+.movies--container {
+    text-align: center;
+}
+.movies--container h1 {
+    margin: 1.2em 0;
+}
+.movies {
+    display: flex; 
+    justify-content: space-around;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.movie img {
+    max-height: 200px;
+}
+.thanks {
+    margin: 0;
+    font-size: 10px;
+    text-align: center;
+    padding: 2em;
+}
+.thanks a {
+    color: yellow;
+}
+.content {
+    color: yellow;
+    width: 100%;
+    height: 100vh;
 }

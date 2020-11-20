@@ -1,14 +1,28 @@
 import React from 'react';
+import { Route, HashRouter } from 'react-router-dom';
+import Navbar from './Navbar';
+import Movies from './Movies';
+import Characters from './Characters';
+import Planets from './Planets';
+
 
 class App extends React.Component {
+
 	render() {
 		return (
-      <div className="app-container">
-        <div className="logo"></div>
-        <p className="logo__txt">This is example is possible thanks to the <a href="https://swapi.dev/api/" target="_blank" >Star Wars API</a></p>
-      </div>
+      <HashRouter>
+        <div className="app-container">
+          <Navbar />
+          <div className="content">
+              <Route path="/Movies" component={Movies}></Route>
+              <Route path="/Characters" component={Characters}></Route>
+              <Route path="/Planets" component={Planets}></Route>
+          </div>
+        </div>
+      </HashRouter>
     );
-	}
+  }
+  
 }
 
 export default App;
