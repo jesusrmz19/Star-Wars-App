@@ -5,12 +5,12 @@
     height: 100vh;
 }
 .movies {
-    //border: solid 1px yellow;
     width: 90%;
-    height: 450px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
     .movie {
         width: 210px;
         font-size: 12px;
@@ -35,6 +35,15 @@
             font-family: $sec-font;
             text-align: left;
         }
+        &--rating {
+            display: flex;
+            margin-top: 6px;
+            img { 
+                width: 35px;
+                margin-left: 7px;
+                border-radius: 5px; 
+            }
+        }
         &--btn {
             font-family: var(--sec-font);
             font-size: 12px;
@@ -58,7 +67,7 @@
             margin-left: 12px;
         }
         p + p {
-            margin-top: 4px;
+            margin-top: 6px;
         }
     }
 }

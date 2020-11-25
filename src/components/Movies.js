@@ -12,7 +12,12 @@ class Movies extends React.Component {
             <div className="movies--container">
                 <h1>Movies</h1>
                 <ul className="movies">
-                    <Movie details={this.state.movies}/>
+                    {Object.keys(this.state.movies).map(key => (
+                        <Movie
+                            key={key}
+                            details={this.state.movies[key]}
+                        />
+                    ))}
                 </ul>
             </div>
         );
