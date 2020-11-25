@@ -12,8 +12,10 @@ class App extends React.Component {
 		return (
       <HashRouter>
         <div className="app-container">
-          <Navbar />
-          <div className="content">
+          <div className="app-navbar">
+            <Navbar  />
+          </div>
+          <div className="app-content">
               <Route path="/Movies" component={Movies}></Route>
               <Route path="/Characters" component={Characters}></Route>
               <Route path="/Planets" component={Planets}></Route>
