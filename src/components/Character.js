@@ -10,6 +10,7 @@ class Character extends React.Component {
     };
 
     componentDidMount() {
+            // Fetch la información del homeworld, una vez que carga el componente
             fetch(this.props.details.homeworld)
             .then(res => res.json())
             .then(
@@ -26,6 +27,7 @@ class Character extends React.Component {
                     });
                 }
             );
+            // Fetch la información de cada link que está dentro del array de films
             this.props.details.films.forEach(link => {
                 fetch(link)
                 .then(res => res.json())
@@ -33,7 +35,7 @@ class Character extends React.Component {
                     (data) => {
                         this.setState({
                             isLoaded: true,
-                            movies: [...this.state.movies, data.title]
+                            movies: [...this.state.movies, data.title] // Spread cada título en el state movie
                         });
                     },
                     (error) => {
