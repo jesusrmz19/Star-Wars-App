@@ -1,8 +1,10 @@
 @import "_variables.scss";
+@import "_mixins.scss";
 @import "_navbar.scss";
 @import "_movies.scss";
 @import "_characters.scss";
 @import "_planets.scss";
+
 
 * {
     box-sizing: border-box;
@@ -59,6 +61,12 @@ p, h1 {
         align-items: center;
         width: 50%;
         margin: 0 auto;
+        @include respond(medium) {
+            margin-top: 70px;
+        }
+        @include respond(xlarge) {
+            margin-top: 150px;
+        }
     }
     h1 {
         font-size: 23px;
