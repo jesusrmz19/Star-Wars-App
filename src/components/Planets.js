@@ -2,7 +2,9 @@ import React from 'react';
 
 function Planets() {
     return(
-        <h1>Planets</h1>
+        <div className="planets--container">
+            <h1 className="loading">Working on it...</h1>
+        </div>
     );
 }
 

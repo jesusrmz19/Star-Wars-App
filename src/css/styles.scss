@@ -1,6 +1,8 @@
 @import "_variables.scss";
 @import "_navbar.scss";
 @import "_movies.scss";
+@import "_characters.scss";
+@import "_planets.scss";
 
 * {
     box-sizing: border-box;
@@ -44,6 +46,7 @@ p, h1 {
     width: 100%;
     height: 100vh;
     text-align: center;
+    padding: 3em;
     &--logo {
         background: url("images/Star_Wars_Logo.svg") center no-repeat;
         background-size: 35%;

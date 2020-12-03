@@ -1,0 +1,131 @@
+.charact--container {
+    text-align: center;
+    background-color: #252525;
+    padding-top: 50px;
+    height: 100vh;
+}
+.characters {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    //border: solid 1px yellow;
+    height: auto;
+    .character {
+        width: 210px;
+        font-size: 12px;
+        height: 420px;
+        //border: solid 1px red;
+        position: relative;
+        text-align: center;
+        perspective: 1000px;
+        &--card {
+            position: relative;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            left: 0;
+            width: 100%;
+            height: 285px;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+        }
+        &--front {
+            width: 200px;
+            height: 280px;
+            position: absolute;
+            img {
+                object-fit: cover;
+                width: 200px;
+                height: 280px;
+                border-radius: 5px;
+            }
+        }
+        &--back {
+            width: 200px;
+            height: 280px;
+            border-radius: 5px;
+            position: absolute;
+            transform: rotateY(180deg);
+            background-color: #FFFFD1;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 1em;
+        }
+        &--name {
+            position: absolute;
+            top: 298px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 700;
+            font-size: 16px;
+            color: white;
+            font-family: $sec-font;
+            text-transform: uppercase;
+            text-align: center;
+            border: solid 1px $yellow;
+            border-left: none;
+            border-right: none;
+            padding: 0.8em 1em;
+            width: 100%;
+        }
+        &--btn {
+            position: absolute; 
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            text-decoration: none;
+            font-family: var(--sec-font);
+            font-size: 12px;
+            color: white;
+            font-weight: 700;
+            background: none; 
+            outline: none;
+            border: solid 1px $yellow;
+            padding: 0.8em 2em;
+            box-shadow: none;
+            text-transform: uppercase;
+            transform: color, background-color, 0.3 ease;
+            cursor: pointer;
+            &:hover {
+                color: black;
+                background-color: $yellow;
+            }
+        }
+    }
+}
+.character--card.active {
+    transform: rotateY(180deg);
+}
+.character--btn.active {
+    color: black;
+    background-color: $yellow;
+}
+.charact {
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    padding: 0.8em 1em;
+    color: #252525;
+    font-family: $sec-font;
+    &--type {
+        font-weight: 700;
+    }
+    &--value {
+        &--films {
+            text-align: left;
+            span {
+                display: block;
+            }
+        }
+    }
+    &--film {
+        justify-self: center;
+    }
+}
