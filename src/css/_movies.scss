@@ -1,8 +1,13 @@
 .movies--container {
     text-align: center;
     background-color: #252525;
+    background: url(./images/background.jpg) center;
+    background-size: cover;
     padding-top: 50px;
     height: 100vh;
+    @include respond(medium){
+        padding-top: 70px;
+    }
 }
 .movies {
     width: 90%;
@@ -14,7 +19,9 @@
     .movie {
         width: 210px;
         font-size: 12px;
-        //border: 1px red solid;
+        @include respond(large) {
+            width: 310px;
+        }
         &--episode {
             font-weight: 700;
             font-size: 14px;
@@ -27,6 +34,9 @@
         img {
             width: 200px;
             border-radius: 5px;
+            @include respond(large) {
+                width: 300px;
+            }
         }
         &--name {
             font-weight: 700;
@@ -92,3 +102,135 @@
     font-family: $sec-font;
     text-transform: uppercase;
 }
+
+
+/* CAROUSEL SECTION */
+.carousel--wrapper {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    position: relative;
+    @include respond(medium) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .carousel {
+        width: 80%;
+        transform-style: preserve-3d;
+        height: 450px;
+        @include respond(large) {
+            height: 600px;
+        }
+        &--elem {  
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            transition: all 0.5s ease;
+        }
+        &--btn {
+            position: absolute;
+            top: 47%;
+            width: 3rem;
+            height: 3rem;
+            background-color: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001; 
+            border: 1px solid $yellow;
+            transition: background-color 0.2s ease-in;
+            &:hover {
+                background-color: $yellow;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        .active {
+            opacity: 1;
+            position: relative;
+            z-index: 900;
+        }
+        .prev {
+            opacity: 1;
+            transition: opacity 0.1s linear;
+            left: 0;
+            //transform: translateX(-150%);
+        }
+        .next {
+            opacity: 1;
+            transition: opacity 0.1s linear;
+            right: 0;
+            //transform: translateX(150%);
+        }
+    }
+}
+
+.btn--prev {
+    left: 10px;
+}
+
+.btn--next {
+    right: 10px;
+}
+
+.btn--prev::after, .btn--next::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 54%;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transition: all 0.2s ease-in;
+    transform: translate(-50%,-50%) rotate(135deg);
+}
+.btn--next::after {
+  left: 47%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.btn--prev:hover::after, .btn--next:hover::after {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+
+  /*
+  .carousel_photo {
+    display: flex;
+    font-size: 200px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    padding: 1rem 4rem;
+    z-index: 100;
+    transition: all 0.5s;
+  }
+  .carousel_photo.initial,
+  .carousel_photo.active {
+    opacity: 1;
+    position: relative;
+    z-index: 900;
+  }
+  .carousel_photo.prev,
+  .carousel_photo.next {
+    z-index: 800;
+  }
+  .carousel_photo.prev {
+    transform: translateX(-100%);
+  }
+  .carousel_photo.next {
+    transform: translateX(100%);
+  }*/

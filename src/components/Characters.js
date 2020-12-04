@@ -30,10 +30,10 @@ class Characters extends React.Component {
         if(error) {
             return (<div className="charact--container"><div className="loading">Error</div></div>)
         } else if (!isLoaded) {
-            return (<div className="charact--container"><div className="loading">Loading...</div></div>)
+            return (<div className="charact--container"><div className="loading" >Loading...</div></div>)
         } else {
             return(
-                <div className="charact--container">
+                <div className="charact--container--loaded">
                     <h1>Characters</h1>
                     <ul className="characters">
                         {characters.map(character => (

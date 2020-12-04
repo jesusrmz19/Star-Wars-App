@@ -2,11 +2,21 @@
     text-align: center;
     background-color: #252525;
     padding-top: 50px;
+    background: url(./images/background.jpg) center;
+    background-repeat: repeat;
     height: 100vh;
+    &--loaded {
+        text-align: center;
+        background-color: #252525;
+        padding-top: 50px;
+        background: url(./images/background.jpg) center;
+        background-repeat: repeat;
+    }
 }
 .characters {
     width: 90%;
-    margin: 40px auto;
+    margin: 0 auto;
+    padding: 40px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
@@ -129,3 +139,4 @@
         justify-self: center;
     }
 }
+

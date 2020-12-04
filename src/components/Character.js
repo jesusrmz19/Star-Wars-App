@@ -60,7 +60,7 @@ class Character extends React.Component {
     }
 
     render () {
-        const {name, height, mass, gender, birth_year, films} = this.props.details;
+        const {name, height, mass, gender, birth_year} = this.props.details;
         return(
             <li className="character">
                 <div className="character--card">
