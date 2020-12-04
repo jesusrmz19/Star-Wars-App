@@ -11,3 +11,5 @@ The first released has been made, only Movies and Characters for the moment, mor
 You can see the version 1.0 in here <https://starwarsspa.netlify.app/#/>
 
 Produly hosted in Netlify 💚
+
+![Logo for the page](./public/images/icon_for_tab.png)
