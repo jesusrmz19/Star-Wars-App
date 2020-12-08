@@ -36,8 +36,12 @@ class Characters extends React.Component {
                 <div className="charact--container--loaded">
                     <h1>Characters</h1>
                     <ul className="characters">
-                        {characters.map(character => (
-                                <Character details={character} />
+                        {characters.map((character,index) => (
+                                <Character 
+                                    details={character} 
+                                    key={index}
+                                    index={index}
+                                />
                             ))}
                     </ul>
                 </div>
