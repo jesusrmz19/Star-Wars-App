@@ -2,7 +2,7 @@
     text-align: center;
     background-color: #252525;
     background: url(./images/background.jpg) center;
-    background-size: cover;
+    background-repeat: repeat;
     padding-top: 50px;
     height: 100vh;
     @include respond(medium){
