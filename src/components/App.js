@@ -8,12 +8,27 @@ import Planets from './Planets';
 
 
 class App extends React.Component {
+  state = {
+    active: false
+  };
+
+  openMenu = () => {
+    const currentState = this.state.active;
+    this.setState({
+      active: !currentState
+    });
+    console.log('open the menu');
+  };
 
 	render() {
 		return (
       <HashRouter>
         <div className="app-container">
-          <nav className="app-navbar">
+          <button className="mobile-menu--btn" onClick={this.openMenu}>
+            <span className={this.state.active ? "bar open" : "bar"}></span>
+          </button>
+          <div className={this.state.active ? "opacity--overlay open" : "opacity--overlay"}></div>
+          <nav className={this.state.active ? "app-navbar open" : "app-navbar"}>
             <Navbar  />
           </nav>
           <main className="app-content">

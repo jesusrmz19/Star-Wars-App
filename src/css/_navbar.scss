@@ -6,11 +6,17 @@
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
+    @include respond(smobile) {
+        justify-content: space-around;
+    }
     .logo {
         background: url("images/Star_Wars_Logo.svg") center no-repeat;
         background-size: 90%;
         height: 120px;
         width: 100%;
+        @include respond(smobile) {
+            background-size: 70%;
+        }
     }
     .navbar {
         display: flex; 

@@ -35,6 +35,20 @@ p, h1 {
     position: fixed;
     width: 250px;
     height: 100vh;
+    transition: all ease-in 0.4s;
+    @include respond(smobile) {
+        position: absolute;
+        z-index: 1000;
+        width: 0px;
+        left: -250px;
+        display: block;
+    }
+}
+.app-navbar.open {
+    width: 250px;
+    left: 0;
+    opacity: 1;
+    display: block;
 }
 .app-content {
     display: block;
@@ -42,7 +56,93 @@ p, h1 {
     left: 250px; 
     height: auto;
     width: calc(100% - 250px);
+    @include respond(smobile) {
+        left: 0;
+        width: 100%;
+    }
 }
+.mobile-menu--btn {
+    display: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none;
+    text-align: left;
+    @include respond(smobile) {
+        //border: solid 1px red;
+        display: block;
+        position: relative;
+        margin: 15px;
+        float: left;
+        height: 30px;
+        width: 30px;
+        z-index: 1001;
+    }
+    .bar {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 28px;
+        background-color: $yellow;
+        height: 3px;
+        transition: all ease 0.3s;
+        &::before {
+            content: "";
+            position: absolute; 
+            height: 3px; 
+            width: 28px;
+            background-color: $yellow;
+            top: 8px;
+        }
+        &::after {
+            content: "";
+            position: absolute; 
+            height: 3px; 
+            width: 28px;
+            background-color: $yellow;
+            top: 16px;
+        }
+    }
+}
+
+.bar.open {
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    &::before {
+        opacity: 1;
+        transform: rotate(90deg);
+        top: 0;
+    }
+    &::after {
+        opacity: 0;
+    }
+}
+
+.bar--up.active {
+    transform: translateY(3px) rotate(135deg);
+}
+.bar--down.active {
+    transform: translateY(-4px) rotate(45deg);
+}
+
+.opacity--overlay {
+    z-index: 500;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -110%;
+    background-color: rgba(0,0,0,0.8);
+    transition: left 0.3s ease;
+    opacity: 0;
+}
+.opacity--overlay.open {
+    left: 0;
+    opacity: 1;
+}
+
 .main {
     background-color: black;
     width: 100%;
@@ -54,6 +154,10 @@ p, h1 {
         background-size: 35%;
         height: 300px;
         width: 100%;
+        @include respond(smobile) {
+            height: 220px;
+            background-size: 100%;
+        }
     }
     &--txt {
         display: flex;
@@ -61,6 +165,9 @@ p, h1 {
         align-items: center;
         width: 50%;
         margin: 0 auto;
+        @include respond(smobile) {
+            width: 100%;
+        }
         @include respond(medium) {
             margin-top: 70px;
         }
