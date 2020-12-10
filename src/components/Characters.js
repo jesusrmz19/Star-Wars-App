@@ -5,10 +5,12 @@ class Characters extends React.Component {
     state = {
         error: null,
         isLoaded: false,
+        webPage: 'https://swapi.dev/api/people/?page=',
+        pageNumber: 1,
         characters: []
     };
     componentDidMount() {
-        fetch('https://swapi.dev/api/people/')
+        fetch(this.state.webPage + this.state.pageNumber)
             .then(res => res.json())
             .then(
                 (data) => {
@@ -25,6 +27,37 @@ class Characters extends React.Component {
                 }
             );
     }
+    componentDidUpdate(prevState){
+        if(this.state.pageNumber !== prevState.pageNumber) {
+            const fetchData = async () => {
+                const response = await fetch(
+                    this.state.webPage + this.state.pageNumber
+                );
+                const data = await response.json();
+                this.setState({ characters: data.results });
+              };
+        
+              fetchData();
+        }
+    }
+    getNextPage = () => {
+        if(this.state.pageNumber === 9) {
+            return;
+        }else{
+            this.setState({
+                pageNumber: this.state.pageNumber + 1
+            });
+        }
+    };
+    getPrevPage = () => {
+        if(this.state.pageNumber === 1) {
+            return;
+        }else{
+            this.setState({
+                pageNumber: this.state.pageNumber - 1
+            });
+        }
+    }
     render () {
         const { error, isLoaded, characters } =  this.state;
         if(error) {
@@ -35,6 +68,8 @@ class Characters extends React.Component {
             return(
                 <div className="charact--container--loaded">
                     <h1>Characters</h1>
+                    <button onClick={this.getPrevPage}>Prev Page</button>
+                    <button onClick={this.getNextPage}>Next Page</button>
                     <ul className="characters">
                         {characters.map((character,index) => (
                                 <Character 

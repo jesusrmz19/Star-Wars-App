@@ -65,7 +65,7 @@ class Character extends React.Component {
             <li className="character">
                 <div className="character--card">
                     <div className="character--front">
-                        <img src={characters[name].image} alt={name}></img>
+                        <img src={characters[name] ? characters[name].image : '#' } alt={name}></img>
                     </div>
                     <div className="character--back">
                         <div className="charact">
@@ -95,7 +95,7 @@ class Character extends React.Component {
                     </div>
                 </div>
                 <p className="character--name">{name}</p>
-                <button className="character--btn" onClick={this.handleMore} data-index={characters[name].index}>see more</button>
+                <button className="character--btn" onClick={this.handleMore} /* data-index={characters[name].index} */>see more</button>
             </li>
         );
     }
