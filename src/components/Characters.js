@@ -74,7 +74,7 @@ class Characters extends React.Component {
                         {characters.map((character,index) => (
                                 <Character 
                                     details={character} 
-                                    key={index}
+                                    key={characters[index].name}
                                     index={index}
                                 />
                             ))}
