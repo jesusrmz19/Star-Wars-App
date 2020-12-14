@@ -13,30 +13,33 @@ class Movies extends React.Component {
     };
     
     componentDidMount() {
+        this.fetchMovies();
+    };
 
-        fetch('https://swapi.dev/api/films/')
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    this.setState({
-                        isLoaded: true,
-                        movies: data.results,
-                        length: data.results.length,
-                        prevIndex: data.results.length -1
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error: error
-                    });
-                }
-            );
+    fetchMovies = async() => {
+        try {
+            const response = await fetch('https://swapi.dev/api/films/');
+            const data = await response.json();
+            const movies = data.results;
+            const length = data.results.length;
+            const prevIndex = data.results.length - 1;
+            this.setState({
+                isLoaded: true,
+                movies, 
+                length,
+                prevIndex
+            });
+        }catch(error){
+            this.setState({
+                isLoaded: true,
+                error
+            });
+        }
         this.setState({
             nextIndex: this.state.activeIndex + 1
         });
-
     };
+
 
     prevButton = () => {
         if(this.state.activeIndex === 0) {

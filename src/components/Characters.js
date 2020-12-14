@@ -9,42 +9,11 @@ class Characters extends React.Component {
         pageNumber: 1,
         characters: [],
     };
-    /*
-    componentDidMount() {
-        fetch(this.state.webPage + this.state.pageNumber)
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    this.setState({
-                        isLoaded: true,
-                        characters: data.results
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error: error
-                    });
-                }
-            );
-    }*/
+
     componentDidMount() {
         this.fetchHero(0);
-    }
-    /*
-    componentDidUpdate(prevState){
-        if(this.state.pageNumber !== prevState.pageNumber) {
-            const fetchData = async () => {
-                const response = await fetch(
-                    this.state.webPage + this.state.pageNumber
-                );
-                const data = await response.json();
-                this.setState({ characters: data.results });
-              };
+    };
 
-              fetchData();
-        }
-    }*/
     fetchHero = async(nextOrPrev) => {
         let pageNum = this.state.pageNumber + nextOrPrev;
         try {
@@ -63,17 +32,20 @@ class Characters extends React.Component {
                 error,
             });
         }
-    }
+    };
+
     getNextPage = () => {
         if(this.state.pageNumber < 9) {
             this.fetchHero(1);
         }
     };
+
     getPrevPage = () => {
         if(this.state.pageNumber > 1) {
             this.fetchHero(-1);
         }
-    }
+    };
+
     render () {
         const { error, isLoaded, characters } =  this.state;
         if(error) {
