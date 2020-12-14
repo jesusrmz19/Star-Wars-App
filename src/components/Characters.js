@@ -35,11 +35,13 @@ class Characters extends React.Component {
                 });
             }
         }catch(error){
-            this.setState({
-                pageNumber: pageNum,
-                isLoaded: true,
-                error,
-            });
+            if(!this._isMounted){
+                this.setState({
+                    pageNumber: pageNum,
+                    isLoaded: true,
+                    error,
+                });
+            }
         }
     };
 
@@ -71,7 +73,7 @@ class Characters extends React.Component {
                         {characters.map((character,index) => (
                                 <Character
                                     details={character}
-                                    key={characters[index].name}
+                                    key={character.name}
                                     index={index}
                                 />
                             ))}
