@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import characters from '../sample-characters';
 
 class Character extends React.Component {
@@ -48,15 +49,12 @@ class Character extends React.Component {
             });
     }
 
-    handleMore = (event) => {
-        let indexPerson = event.target.dataset.index;
-        const character = document.querySelectorAll('.character');
-        const characterBtn = document.querySelectorAll('.character--btn');
-        let characterCard = character[indexPerson].firstChild;
-        let thisBtn = characterBtn[indexPerson];
-        thisBtn.classList.toggle('active');
-        (thisBtn.classList.contains('active')) ? thisBtn.innerHTML = 'see less' : thisBtn.innerHTML = 'see more';
-        characterCard.classList.toggle('active');
+    handleMore = () => {
+        let characterDOM = ReactDOM.findDOMNode(this);
+        characterDOM.querySelector('.character--card').classList.toggle('active');
+        let characterBtn = characterDOM.querySelector('.character--btn');
+        characterBtn.classList.toggle('active');
+        (characterBtn.classList.contains('active')) ? characterBtn.innerHTML = 'see less' : characterBtn.innerHTML = 'see more';
     }
 
     render () {
@@ -95,7 +93,7 @@ class Character extends React.Component {
                     </div>
                 </div>
                 <p className="character--name">{name}</p>
-                <button className="character--btn" onClick={this.handleMore} /* data-index={characters[name].index} */>see more</button>
+                <button className="character--btn" onClick={this.handleMore}>see more</button>
             </li>
         );
     }
