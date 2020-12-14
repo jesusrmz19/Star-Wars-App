@@ -65,8 +65,8 @@ class Characters extends React.Component {
             return(
                 <div className="charact--container--loaded">
                     <h1>Characters</h1>
-                    <button onClick={this.getPrevPage}>Prev Page</button>
-                    <button onClick={this.getNextPage}>Next Page</button>
+                    <button className="charact--container--btn" onClick={this.getPrevPage}>Prev Page</button>
+                    <button className="charact--container--btn" onClick={this.getNextPage}>Next Page</button>
                     <ul className="characters">
                         {characters.map((character,index) => (
                                 <Character
