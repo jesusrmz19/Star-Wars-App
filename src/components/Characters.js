@@ -10,8 +10,15 @@ class Characters extends React.Component {
         characters: [],
     };
 
+    _isMounted = false; // This method resolves the mounted problem. Now you don't see the warning in the console
+
     componentDidMount() {
+        this._isMounted = true;
         this.fetchHero(0);
+    };
+
+    componentWillUnmount() {
+        this._isMounted = false;
     };
 
     fetchHero = async(nextOrPrev) => {
@@ -20,11 +27,13 @@ class Characters extends React.Component {
             const response = await fetch(this.state.webPage +  pageNum);
             const data = await response.json();
             const characters = data.results;
-            this.setState({
-                pageNumber: pageNum,
-                characters,
-                isLoaded: true
-            });
+            if(this._isMounted){
+                this.setState({
+                    pageNumber: pageNum,
+                    characters,
+                    isLoaded: true
+                });
+            }
         }catch(error){
             this.setState({
                 pageNumber: pageNum,
