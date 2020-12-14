@@ -7,8 +7,9 @@ class Characters extends React.Component {
         isLoaded: false,
         webPage: 'https://swapi.dev/api/people/?page=',
         pageNumber: 1,
-        characters: []
+        characters: [],
     };
+    /*
     componentDidMount() {
         fetch(this.state.webPage + this.state.pageNumber)
             .then(res => res.json())
@@ -26,7 +27,11 @@ class Characters extends React.Component {
                     });
                 }
             );
+    }*/
+    componentDidMount() {
+        this.fetchHero(0);
     }
+    /*
     componentDidUpdate(prevState){
         if(this.state.pageNumber !== prevState.pageNumber) {
             const fetchData = async () => {
@@ -36,26 +41,37 @@ class Characters extends React.Component {
                 const data = await response.json();
                 this.setState({ characters: data.results });
               };
-        
+
               fetchData();
+        }
+    }*/
+    fetchHero = async(nextOrPrev) => {
+        let pageNum = this.state.pageNumber + nextOrPrev;
+        try {
+            const response = await fetch(this.state.webPage +  pageNum);
+            const data = await response.json();
+            const characters = data.results;
+            this.setState({
+                pageNumber: pageNum,
+                characters,
+                isLoaded: true
+            });
+        }catch(error){
+            this.setState({
+                pageNumber: pageNum,
+                isLoaded: true,
+                error,
+            });
         }
     }
     getNextPage = () => {
-        if(this.state.pageNumber === 9) {
-            return;
-        }else{
-            this.setState({
-                pageNumber: this.state.pageNumber + 1
-            });
+        if(this.state.pageNumber < 9) {
+            this.fetchHero(1);
         }
     };
     getPrevPage = () => {
-        if(this.state.pageNumber === 1) {
-            return;
-        }else{
-            this.setState({
-                pageNumber: this.state.pageNumber - 1
-            });
+        if(this.state.pageNumber > 1) {
+            this.fetchHero(-1);
         }
     }
     render () {
@@ -72,8 +88,8 @@ class Characters extends React.Component {
                     <button onClick={this.getNextPage}>Next Page</button>
                     <ul className="characters">
                         {characters.map((character,index) => (
-                                <Character 
-                                    details={character} 
+                                <Character
+                                    details={character}
                                     key={characters[index].name}
                                     index={index}
                                 />
