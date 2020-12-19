@@ -29,7 +29,7 @@
             font-family: $sec-font;
             text-transform: uppercase;
             text-align: left;
-            margin-top: 10px; 
+            margin-top: 10px;
         }
         img {
             width: 200px;
@@ -49,7 +49,7 @@
         &--duration, &--rating {
             font-weight: 400;
             font-size: 14px;
-            color: white;   
+            color: white;
             font-family: $sec-font;
             text-align: left;
         }
@@ -59,10 +59,11 @@
         &--rating {
             display: flex;
             margin-top: 6px;
-            img { 
+            img {
                 width: 35px;
+                height: 17.5px;
                 margin-left: 7px;
-                border-radius: 5px; 
+                border-radius: 5px;
             }
         }
         &--btn {
@@ -72,7 +73,7 @@
             font-size: 12px;
             color: white;
             font-weight: 700;
-            background: none; 
+            background: none;
             outline: none;
             border: solid 1px $yellow;
             padding: 0.8em 2em;
@@ -93,8 +94,8 @@
 }
 
 .loading {
-    font-size: 50px; 
-    position: absolute; 
+    font-size: 50px;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -126,7 +127,7 @@
         @include respond(large) {
             height: 600px;
         }
-        &--elem {  
+        &--elem {
             opacity: 0;
             position: absolute;
             top: 0;
@@ -141,7 +142,7 @@
             background-color: transparent;
             border-radius: 50%;
             cursor: pointer;
-            z-index: 1001; 
+            z-index: 1001;
             border: 1px solid $yellow;
             transition: background-color 0.2s ease-in;
             &:hover {
