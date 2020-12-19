@@ -2,7 +2,7 @@ const movies = {
     movie1: {
       name: "Episode I: The Phantom Menace",
       episode: 1,
-      image: "/images/episode1.png",
+      image: "/images/films/episode1.png",
       duration: "2hr 16min",
       rating: "6.5/10",
       romanEpisode: "I",
@@ -12,7 +12,7 @@ const movies = {
     movie2: {
       name: "Episode II: Attack of the Clones",
       episode: 2,
-      image: "/images/episode2.jpg",
+      image: "/images/films/episode2.jpg",
       duration: "2hr 22min",
       rating: "6.5/10",
       romanEpisode:"II",
@@ -22,7 +22,7 @@ const movies = {
     movie3: {
       name: "Episode III: Revenge of the Sith",
       episode: 3,
-      image: "/images/episode3.png",
+      image: "/images/films/episode3.png",
       duration: "2hr 20min",
       rating: "7.5/10",
       romanEpisode:"III",
@@ -32,7 +32,7 @@ const movies = {
     movie4: {
       name: "Episode IV: A New Hope",
       episode: 4,
-      image: "/images/episode4.jpg",
+      image: "/images/films/episode4.jpg",
       duration: "2hr 1min",
       rating: "8.6/10",
       romanEpisode:"IV",
@@ -42,7 +42,7 @@ const movies = {
     movie5: {
       name: "Episode V: The Empire Strikes Back",
       episode: 5,
-      image: "/images/episode5.jpg",
+      image: "/images/films/episode5.jpg",
       duration: "2hr 4min",
       rating: "8.7/10",
       romanEpisode: "V",
@@ -52,7 +52,7 @@ const movies = {
     movie6: {
       name: "Episode VI: Return of the Jedi",
       episode: 6,
-      image: "/images/episode6.jpg",
+      image: "/images/films/episode6.jpg",
       duration: "2hr 11min",
       rating: "8.3/10",
       romanEpisode:"VI",
@@ -62,7 +62,7 @@ const movies = {
     movie7: {
       name: "Episode VII: The Force Awakens",
       episode: 7,
-      image: "/images/episode7.jpg",
+      image: "/images/films/episode7.jpg",
       duration: "1hr 40min",
       rating: "8.5/10",
       romanEpisode:"VII"
@@ -71,7 +71,7 @@ const movies = {
     movie8: {
       name: "Episode VIII: The Last Jedi",
       episode: 8,
-      image: "/images/episode8.jpg",
+      image: "/images/films/episode8.jpg",
       duration: "1hr 40min",
       rating: "8.5/10",
       romanEpisode:"VIII"
@@ -80,7 +80,7 @@ const movies = {
     movie9: {
       name: "Episode IX: The Rise of Skywalker",
       episode: 9,
-      image: "/images/episode9.jpg",
+      image: "/images/films/episode9.jpg",
       duration: "1hr 40min",
       rating: "8.5/10",
       romanEpisode:"IX"
