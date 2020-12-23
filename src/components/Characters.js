@@ -7,6 +7,8 @@ class Characters extends React.Component {
         error: null,
         isLoaded: false,
         webPage: 'https://swapi.dev/api/people/?page=',
+        searchPage: 'https://swapi.dev/api/people/?search=',
+        inputValue: '',
         pageNumber: 1,
         characters: [],
         showAll: false
@@ -62,6 +64,46 @@ class Characters extends React.Component {
         }
     };
 
+    handleSearch = async(e) => {
+        if(e.target.value !== ''){
+            await this.setState({
+                searchPage: 'https://swapi.dev/api/people/?search=' + e.target.value,
+                inputValue: e.target.value
+            });
+            this.fetchSingle();
+            this._isMounted = true;
+        }else{
+            await this.setState({
+                searchPage: 'https://swapi.dev/api/people/?search=',
+                inputValue: '',
+                characters: []
+            });
+            this._isMounted = false;
+        }
+        console.log(e.target.value);
+    };
+
+    fetchSingle = async() => {
+        try {
+            const response = await fetch(this.state.searchPage);
+            const data = await response.json();
+            const characters = data.results;
+            if(this._isMounted){
+                this.setState({
+                    characters,
+                    isLoaded: true
+                });
+            }
+        }catch(error){
+            if(!this._isMounted){
+                this.setState({
+                    isLoaded: true,
+                    error,
+                });
+            }
+        }
+    }
+
     render () {
         const showAll = this.state.showAll;
         const { characters } =  this.state;
@@ -74,7 +116,7 @@ class Characters extends React.Component {
                     <button className="charact--container--btn" onClick={this.getNextPage}>Next Page</button>
                     <ul className="characters">
                         {characters.map((character,index) => (
-                            <Character 
+                            <Character
                                 details={character}
                                 key={character.name}
                                 index={index}
@@ -89,12 +131,30 @@ class Characters extends React.Component {
                 <React.Fragment>
                     <div className="search">
                         <label className="search--label">Search: </label>
-                        <input type="text" id="charactSearch" class="search--input"></input>
+                        <input
+                            type="text"
+                            id="charactSearch"
+                            class="search--input"
+                            onChange={this.handleSearch}
+                            value={this.state.inputValue}>
+                        </input>
                     </div>
                     <button className="charact--container--btn" onClick={this.displayAll}>Display All Characters</button>
                 </React.Fragment>
             );
-            displayCharacters = null;
+            displayCharacters = (
+                <React.Fragment>
+                    <ul className="characters">
+                        {characters.map((character,index) => (
+                            <Character
+                                details={character}
+                                key={character.name}
+                                index={index}
+                            />
+                        ))}
+                    </ul>
+                </React.Fragment>
+            );
         }
         return(
             <div className="charact--container--loaded">
@@ -103,7 +163,7 @@ class Characters extends React.Component {
                 <div className="main--content">{displayCharacters}</div>
             </div>
         );
-                
+
     }
 }
 
