@@ -11,6 +11,10 @@
         padding-top: 50px;
         background: url(./images/background.jpg) center;
         background-repeat: repeat;
+        min-height: 100vh;
+        .search {
+            margin-top: 30px;
+        }
     }
     &--btn {
         margin-top: 20px;
@@ -34,6 +38,14 @@
         }
     }
 }
+
+.charact--input {
+    width: 400px;
+    height: 50px;
+    border: 1px solid $yellow;
+    font-size: 40px;
+}
+
 .characters {
     width: 90%;
     margin: 0 auto;

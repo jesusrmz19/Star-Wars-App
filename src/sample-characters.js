@@ -338,6 +338,76 @@ const characters = {
         name: "Jango Fett",
         image: "/images/people/jangofett.jpg",
         index: 65
+    },
+    "Zam Wesell": {
+        name: "Zam Wesell",
+        image: "/images/people/zamwesell.jpg",
+        index: 66
+    },
+    "Dexter Jettster": {
+        name: "Dexter Jettster",
+        image: "/images/people/dexter.jpg",
+        index: 67
+    },
+    "Lama Su": {
+        name: "Lama Su",
+        image: "/images/people/lamasu.jpg",
+        index: 68
+    },
+    "Taun We": {
+        name: "Taun We",
+        image: "/images/people/taunwe.jpg",
+        index: 69
+    },
+    "Jocasta Nu": {
+        name: "Jocasta Nu",
+        image: "/images/people/jocasta.jpg",
+        index: 70
+    },
+    "R4-P17": {
+        name: "R4-P17",
+        image: "/images/people/r4p17.jpg",
+        index: 71
+    },
+    "Wat Tambor": {
+        name: "Wat Tambor",
+        image: "/images/people/wattambor.jpg",
+        index: 72
+    },
+    "San Hill": {
+        name: "San Hill",
+        image: "/images/people/sanhill.jpg",
+        index: 73
+    },
+    "Shaak Ti": {
+        name: "Shaak Ti",
+        image: "/images/people/shaakti.jpg",
+        index: 74
+    },
+    "Grievous": {
+        name: "Grievous",
+        image: "/images/people/grievous.jpg",
+        index: 75
+    },
+    "Tarfful": {
+        name: "Tarfful",
+        image: "/images/people/tarfful.jpg",
+        index: 76
+    },
+    "Raymus Antilles": {
+        name: "Raymus Antilles",
+        image: "/images/people/raymus.jpg",
+        index: 77
+    },
+    "Sly Moore": {
+        name: "Sly Moore",
+        image: "/images/people/sly.jpg",
+        index: 78
+    },
+    "Tion Medon": {
+        name: "Tion Medon",
+        image: "/images/people/tionmedon.jpg",
+        index: 79
     }
 }
 
