@@ -1,5 +1,4 @@
 import React from 'react';
-import characters from '../sample-characters';
 import Character from './Character';
 
 class Characters extends React.Component {
@@ -80,7 +79,6 @@ class Characters extends React.Component {
             });
             this._isMounted = false;
         }
-        console.log(e.target.value);
     };
 
     fetchSingle = async() => {
