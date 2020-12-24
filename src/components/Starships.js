@@ -42,17 +42,25 @@ class Starships extends React.Component {
     }
 
     render() {
-        const { starships } = this.state;
-        return(
-        <div className="starships--container">
-            <h1>Starships</h1>
-            <div className="starships">
-                <Starship
-                    details = {starships}
-                />
-            </div>
-        </div>
-        );
+        const { starships, error, isLoaded } = this.state;
+        if(error) {
+            return (<div className="starships--container"><div className="loading">Error</div></div>);
+        } else if (!isLoaded) {
+            return (<div className="starships--container"><div className="loading">Loading...</div></div>);
+        } else {
+            return(
+                <div className="starships--container">
+                    <h1>Starships</h1>
+                    <div className="starships">
+                        <button className="starships--btn btnS--prev"></button>
+                        <Starship
+                            details = {starships}
+                        />
+                        <button className="starships--btn btnS--next"></button>
+                    </div>
+                </div>
+            );
+        }
     }
 }
 
