@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Main from './Main';
 import Movies from './Movies';
 import Characters from './Characters';
-import Planets from './Planets';
+import Starships from './Starships';
 
 
 class App extends React.Component {
@@ -35,7 +35,7 @@ class App extends React.Component {
               <Route exact path="/" component={Main}></Route>
               <Route path="/Movies" component={Movies}></Route>
               <Route path="/Characters" component={Characters}></Route>
-              <Route path="/Planets" component={Planets}></Route>
+              <Route path="/Starships" component={Starships}></Route>
           </main>
         </div>
       </HashRouter>

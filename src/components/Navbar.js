@@ -9,7 +9,7 @@ class Navbar extends React.Component {
           <div className="navbar">
               <MenuItem tagline="Movies"/>
               <MenuItem tagline="Characters"/>
-              <MenuItem tagline="Planets"/>
+              <MenuItem tagline="Starships"/>
           </div>
           <p className="thanks">This project was possible thanks to the <a href="https://swapi.dev/api/" target="_blank" rel="noreferrer">Star Wars API</a> 💛</p>
         </div>
