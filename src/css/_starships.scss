@@ -3,12 +3,12 @@
     background-color: #252525;
     padding-top: 50px;
     height: 100vh;
-    //background: url(./images/background.jpg) center;
+    background: url(./images/background.jpg) center;
     background-repeat: repeat;
 }
 
 .starships {
-    margin-top: 45px;
+    margin-top: 35px;
 }
 
 .starship {
@@ -16,7 +16,7 @@
     width: 80%;
     height: 500px;
     position: relative;
-    border: solid 1px red;
+    //border: solid 1px red;
     .back {
         position: absolute;
         top: 50%;
@@ -25,7 +25,15 @@
         border-radius: 10px;
         height: 430px;
         width: 415px;
-        background-color: rgba(204,51,66,1);
+        background-image: linear-gradient(to right, #cc3342, #ad2a37, #8e212c, #711921, #551117);
+        &--img {
+            //border: solid 1px green;
+            position: absolute;
+            left: 10%;
+            width: 140px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
     .front {
         position: absolute;
@@ -36,12 +44,50 @@
         height: 330px;
         border-radius: 10px;
         background-color: black;
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
         &--img {
-            border: solid 1px red;
+            //border: solid 1px red;
             position: absolute;
             top: 50%;
             left: 10%;
             transform: translate(-50%,-50%);
+        }
+        &--txt--wrapper {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 55%;
+            //border: solid 1px red;
+            padding: 1.2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            .name {
+                font-family: $main-font;
+                color: white;
+                font-weight: 700;
+                font-size: 40px;
+                text-align: left;
+            }
+            .cost {
+                font-family: $sec-font;
+                color: yellow;
+                font-weight: 400;
+                font-size: 25px;
+            }
+            .charac {
+                font-family: $main-font;
+                color: white;
+                font-weight: 700;
+                span {
+                    font-family: $sec-font;
+                    color: yellow;
+                    font-weight: 400;
+                    margin-left: 20px;
+                    font-size: 17px;
+                }
+            }
         }
     }
 }

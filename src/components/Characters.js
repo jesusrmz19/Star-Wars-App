@@ -132,7 +132,7 @@ class Characters extends React.Component {
                         <input
                             type="text"
                             id="charactSearch"
-                            class="search--input"
+                            className="search--input"
                             onChange={this.handleSearch}
                             value={this.state.inputValue}>
                         </input>
