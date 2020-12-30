@@ -2,14 +2,17 @@
 
 The Star Wars SPA gives you the basic information on the first six movies, their main characters, and plantes.
 
-All this was made with 💛, lots of ☕, and React. 
+All this was made with 💛, lots of ☕, and React.
 
-## First Released
+## Latest News
 
-The first released has been made, only Movies and Characters for the moment, more sections will be included eventually. 
+- Characters section now includes a search bar: you can start writting the name of a character and the app will display options
+- Starships section has been fully added too!
+- Starships section doesn't include all starships from the API, only those that I like the most
 
-You can see it here: <https://starwarsspa.netlify.app/#/>
+
+Try it here: <https://starwarsspa.netlify.app/#/>
 
 <img src="./public/images/icon_for_tab.png" width="150px">
 
-Produly hosted in Netlify 💚
+Produly hosted in Netlify 💚`
