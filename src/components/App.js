@@ -5,6 +5,7 @@ import Main from './Main';
 import Movies from './Movies';
 import Characters from './Characters';
 import Starships from './Starships';
+import Vehicles from './Vehicles';
 
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
               <Route path="/Movies" component={Movies}></Route>
               <Route path="/Characters" component={Characters}></Route>
               <Route path="/Starships" component={Starships}></Route>
+              <Route path="/Vehicles" component ={Vehicles}></Route>
           </main>
         </div>
       </HashRouter>
