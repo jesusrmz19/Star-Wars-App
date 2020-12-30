@@ -3,7 +3,7 @@
     width: 250px;
     background: $navbar-color;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     @include respond(smobile) {
@@ -19,7 +19,7 @@
         }
     }
     .navbar {
-        display: flex; 
+        display: flex;
         flex-direction: column;
     }
     .thanks {

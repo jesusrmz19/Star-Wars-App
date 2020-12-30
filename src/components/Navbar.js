@@ -12,11 +12,14 @@ class Navbar extends React.Component {
               <MenuItem tagline="Starships"/>
               <MenuItem tagline="Vehicles" />
           </div>
-          <p className="thanks">This project was possible thanks to the <a href="https://swapi.dev/api/" target="_blank" rel="noreferrer">Star Wars API</a> 💛</p>
+          <div>
+            <p className="thanks">This project was possible thanks to the <a href="https://swapi.dev/api/" target="_blank" rel="noreferrer">Star Wars API</a> 💛</p>
+            <p className="thanks">Github repo <a href="https://github.com/jesusrmz19/Star-Wars-App" target="_blank" rel="noreferrer">here</a></p>
+          </div>
         </div>
       );
     }
-    
+
   }
 
 
