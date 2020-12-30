@@ -46,7 +46,12 @@
         border-radius: 10px;
         height: 430px;
         width: 415px;
-        background-image: linear-gradient(to right, #cc3342, #ad2a37, #8e212c, #711921, #551117);
+        &.empire {
+            background-image: linear-gradient(to right, #cc3342, #ad2a37, #8e212c, #711921, #551117);
+        }
+        &.light {
+            background-image: linear-gradient(to right, #3342cc, #565fd6, #737bde, #9097e5, #adb3ea);
+        }
         &--img {
             //border: solid 1px green;
             position: absolute;
@@ -67,11 +72,12 @@
         background-color: black;
         box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
         &--img {
-            //border: solid 1px red;
             position: absolute;
             top: 50%;
             left: 10%;
             transform: translate(-50%,-50%);
+            max-width: 420px;
+            //border: solid 1px red;
         }
         &--txt--wrapper {
             position: absolute;

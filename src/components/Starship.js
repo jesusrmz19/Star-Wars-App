@@ -6,7 +6,7 @@ class Starship extends React.Component {
         const { name, crew, max_atmosphering_speed, passengers, hyperdrive_rating, cost_in_credits } = this.props.details;
         return(
             <div className="starship">
-                <div className="back">
+                <div className={ starships[name].side === 'empire' ? 'back empire' : 'back light'}>
                     <img className="back--img" src="/images/starships/starwars_light.svg" alt="starwars-logo"></img>
                 </div>
                 <div className="front">

@@ -6,7 +6,7 @@ class Starships extends React.Component {
         error: null,
         isLoaded: false,
         starships: [],
-        starshipsArr: [2,3,9,10,11,12],
+        starshipsArr: [3,2,9,10,11,12,13,21,28,31,32,39,40],
         index: 0,
         page: null
     };
@@ -15,7 +15,7 @@ class Starships extends React.Component {
 
     componentDidMount() {
         this._isMounted = true;
-        this.fetchShip(2);
+        this.fetchShip(3);
     }
 
     componentWillUnmount() {
