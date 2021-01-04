@@ -46,6 +46,30 @@ class Vehicles extends React.Component {
         }
     }
 
+    prevVehicle = async() => {
+        if(this.state.index - 1 < 0) {
+            return;
+        } else {
+            await this.setState({
+                index: this.state.index - 1
+            });
+            let prevPage = this.state.vehiclesArr[this.state.index];
+            this.fetchVehicle(prevPage);
+        }
+    }
+
+    nextVehicle = async() => {
+        if((this.state.index + 1) > (this.state.vehiclesArr.length - 1)) {
+            return;
+        }else{
+            await this.setState({
+                index: this.state.index + 1
+            });
+            let nextPage = this.state.vehiclesArr[this.state.index];
+            this.fetchVehicle(nextPage);
+        }
+    };
+
     render() {
         const { vehicles, error, isLoaded } = this.state;
         if(error) {
@@ -57,11 +81,11 @@ class Vehicles extends React.Component {
                 <div className="vehicles--container">
                     <h1>Vehicles</h1>
                     <div className="vehicles">
-                        <button className="vehicles--btn btnV--prev"></button>
+                        <button className="vehicles--btn btnV--prev" onClick={this.prevVehicle}></button>
                         <Vehicle
                             details = {vehicles}
                         />
-                        <button className="vehicles--btn btnV--next"></button>
+                        <button className="vehicles--btn btnV--next" onClick={this.nextVehicle}></button>
                     </div>
                 </div>
             );
