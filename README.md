@@ -8,7 +8,9 @@ All this was made with 💛, lots of ☕, and React.
 
 - Characters section now includes a search bar: you can start writting the name of a character and the app will display options
 - Starships section has been fully added too!
-- Starships section doesn't include all starships from the API, only those that I like the most
+- Starships section doesn't include all starships from the API, only those that I liked the most
+- Vehicles section has been fully added too!
+- Vehicles section doesn't include all vehicles from the API, only those that I liked the most
 
 
 Try it here: <https://starwarsspa.netlify.app/#/>
