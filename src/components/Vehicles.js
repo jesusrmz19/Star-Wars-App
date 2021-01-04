@@ -6,7 +6,7 @@ class Vehicles extends React.Component {
         error: null,
         isLoaded: false,
         vehicles: [],
-        vehiclesArr: [],
+        vehiclesArr: [7,8,14,16,18,19,26,30,33,35],
         index: 0,
         page: null
     };
@@ -15,7 +15,7 @@ class Vehicles extends React.Component {
 
     componentDidMount() {
         this._isMounted = true;
-        this.fetchVehicle(7);
+        this.fetchVehicle(8);
     }
 
     componentWillUnmount() {

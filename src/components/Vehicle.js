@@ -1,4 +1,5 @@
 import React from 'react';
+import vehicles from '../sample-vehicles';
 
 class Vehicle extends React.Component {
     render() {
@@ -9,7 +10,7 @@ class Vehicle extends React.Component {
                     <img className="back--img" src="/images/starships/starwars_light.svg" alt="starwars-logo"></img>
                 </div>
                 <div className="front">
-                    <img className="front--img" src="#" alt={name}></img>
+                    <img className="front--img" src={ vehicles[name] ? vehicles[name].image : '#'} alt={name}></img>
                     <div className="front--txt--wrapper">
                         <p className="name">{name}</p>
                         <p className="cost">{cost_in_credits} cred.</p>
