@@ -37,7 +37,7 @@ const starships = {
     },
     "Republic Cruiser": {
         image: "/images/starships/republiccrusier.png",
-        side: "empire"
+        side: "resistance"
     },
     "Droid control ship": {
         image: "/images/starships/droidcontrol.png",
