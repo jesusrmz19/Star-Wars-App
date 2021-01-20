@@ -18,7 +18,6 @@ class App extends React.Component {
     this.setState({
       active: !currentState
     });
-    console.log('open the menu');
   };
 
 	render() {
