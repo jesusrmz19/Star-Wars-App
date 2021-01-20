@@ -1,148 +1,199 @@
-.starships--container{
-    text-align: center;
-    background-color: #252525;
-    padding-top: 50px;
-    height: 100vh;
-    background: url(./images/background.jpg) center;
-    background-repeat: repeat;
+.starships--container {
+  text-align: center;
+  background-color: #252525;
+  padding-top: 50px;
+  height: 100vh;
+  background: url(./images/background.jpg) center;
+  background-repeat: repeat;
 }
 
 .starships {
-    margin: 35px auto 0 auto;
-    width: 80%;
-    //border: 1px solid green;
-    &--btn {
-        position: absolute;
-        top: 47%;
-        width: 3rem;
-        height: 3rem;
-        background-color: transparent;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 1001;
-        border: 1px solid $yellow;
-        transition: background-color 0.2s ease-in;
-        &:hover {
-            background-color: $yellow;
-        }
-        &:focus {
-            outline: none;
-        }
+  margin: 35px auto 0 auto;
+  width: 80%;
+  position: relative;
+  @include respond(smobile) {
+    margin: 0 auto;
+    width: 90%;
+  }
+  &--btn {
+    position: absolute;
+    top: 47%;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    border: 1px solid $yellow;
+    transition: background-color 0.2s ease-in;
+    &:hover {
+      background-color: $yellow;
     }
+    &:focus {
+      outline: none;
+    }
+    @include respond(smobile) {
+      top: 95%;
+    }
+  }
 }
 
 .starship {
-    margin: 0 auto;
-    width: 100%;
-    height: 500px;
-    position: relative;
-    //border: solid 1px red;
-    .back {
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translate(-50%,-50%);
-        border-radius: 10px;
-        height: 430px;
-        width: 415px;
-        &.empire {
-            background-image: linear-gradient(to right, #cc3342, #ad2a37, #8e212c, #711921, #551117);
-        }
-        &.light {
-            background-image: linear-gradient(to right, #3342cc, #565fd6, #737bde, #9097e5, #adb3ea);
-        }
-        &--img {
-            //border: solid 1px green;
-            position: absolute;
-            left: 10%;
-            width: 140px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  //border: solid 1px red;
+  .back {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    height: 430px;
+    width: 415px;
+    &.empire {
+      background-image: linear-gradient(
+        to right,
+        #cc3342,
+        #ad2a37,
+        #8e212c,
+        #711921,
+        #551117
+      );
     }
-    .front {
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%,-50%);
-        width: 480px;
-        height: 330px;
-        border-radius: 10px;
-        background-color: black;
-        box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
-        &--img {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            transform: translate(-50%,-50%);
-            max-width: 420px;
-            //border: solid 1px red;
-        }
-        &--txt--wrapper {
-            position: absolute;
-            right: 0;
-            height: 100%;
-            width: 55%;
-            //border: solid 1px red;
-            padding: 1.2em;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: flex-start;
-            .name {
-                font-family: $main-font;
-                color: white;
-                font-weight: 700;
-                font-size: 40px;
-                text-align: left;
-            }
-            .cost {
-                font-family: $sec-font;
-                color: yellow;
-                font-weight: 400;
-                font-size: 25px;
-            }
-            .charac {
-                font-family: $main-font;
-                color: white;
-                font-weight: 700;
-                span {
-                    font-family: $sec-font;
-                    color: yellow;
-                    font-weight: 400;
-                    margin-left: 20px;
-                    font-size: 17px;
-                }
-            }
-        }
+    &.light {
+      background-image: linear-gradient(
+        to right,
+        #3342cc,
+        #565fd6,
+        #737bde,
+        #9097e5,
+        #adb3ea
+      );
     }
+    &--img {
+      //border: solid 1px green;
+      position: absolute;
+      left: 10%;
+      width: 140px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    /* Responsive for .back card*/
+    @include respond(smobile) {
+      //   border: solid 1px yellow;
+      width: 370px;
+      left: 50%;
+    }
+  }
+  .front {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 330px;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    &--img {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      max-width: 420px;
+      @include respond(smobile) {
+        top: 10%;
+        left: 50%;
+        max-width: 300px;
+      }
+    }
+    &--txt--wrapper {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 55%;
+      //border: solid 1px red;
+      padding: 1.2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      .name {
+        font-family: $main-font;
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+        text-align: left;
+      }
+      .cost {
+        font-family: $sec-font;
+        color: yellow;
+        font-weight: 400;
+        font-size: 25px;
+      }
+      .charac {
+        font-family: $main-font;
+        color: white;
+        font-weight: 700;
+        span {
+          font-family: $sec-font;
+          color: yellow;
+          font-weight: 400;
+          margin-left: 20px;
+          font-size: 17px;
+        }
+      }
+      @include respond(smobile) {
+        padding: 2.2em 1.2em;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    /* Responsive for .front card */
+    @include respond(smobile) {
+      width: 340px;
+      left: 50%;
+    }
+  }
 }
 
 .starships {
-    .btnS--prev {
-        left: 10%;
+  .btnS--prev {
+    left: 10%;
+    @include respond(smobile) {
+      left: 30%;
     }
-    .btnS--next {
-        right: 10%;
+  }
+  .btnS--next {
+    right: 10%;
+    @include respond(smobile) {
+      right: 30%;
     }
-    .btnS--prev::after, .btnS--next::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: 50%;
-        left: 54%;
-        border-right: 3px solid white;
-        border-bottom: 3px solid white;
-        transition: all 0.2s ease-in;
-        transform: translate(-50%,-50%) rotate(135deg);
-    }
-    .btnS--next::after {
-      left: 47%;
-      transform: translate(-50%,-50%) rotate(-45deg);
-    }
-    .btnS--prev:hover::after, .btnS--next:hover::after {
-        border-right: 3px solid black;
-        border-bottom: 3px solid black;
-    }
+  }
+  .btnS--prev::after,
+  .btnS--next::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 54%;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transition: all 0.2s ease-in;
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+  .btnS--next::after {
+    left: 47%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .btnS--prev:hover::after,
+  .btnS--next:hover::after {
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+  }
 }
