@@ -12,6 +12,10 @@ All this was made with 💛, lots of ☕, and React.
 - Vehicles section has been fully added too!
 - Vehicles section doesn't include all vehicles from the API, only those that I liked the most
 
+### January 20th, 2021 Update
+
+All sections are now mobile friendly for small mobile devices.
+No tablet friendly yet.
 
 Try it here: <https://starwarsspa.netlify.app/#/>
 
