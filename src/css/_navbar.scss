@@ -1,57 +1,57 @@
 .navbar__container {
-    height: 100vh;
-    width: 250px;
-    background: $navbar-color;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  height: 100vh;
+  width: 250px;
+  background: $navbar-color;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include respond(smobile) {
+    justify-content: space-around;
+  }
+  .logo {
+    background: url("images/Star_Wars_Logo.svg") center no-repeat;
+    background-size: 90%;
+    height: 120px;
+    width: 100%;
+    @include respond(smobile) {
+      background-size: 70%;
+    }
+  }
+  .navbar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    @include respond(smobile) {
-        justify-content: space-around;
-    }
-    .logo {
-        background: url("images/Star_Wars_Logo.svg") center no-repeat;
-        background-size: 90%;
-        height: 120px;
-        width: 100%;
-        @include respond(smobile) {
-            background-size: 70%;
-        }
-    }
-    .navbar {
-        display: flex;
-        flex-direction: column;
-    }
-    .thanks {
-        margin: 0;
-        font-size: 10px;
-        text-align: center;
-        padding: 2em;
-    }
-    .thanks a {
-        color: yellow;
-    }
+  }
+  .thanks {
+    margin: 0;
+    font-size: 10px;
+    text-align: center;
+    padding: 2em;
+  }
+  .thanks a {
+    color: yellow;
+  }
 }
 
 .menuitem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    transition: background-color, color, ease 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    color: $yellow;
-    &:hover {
-        background-color: $yellow;
-        color: black;
-        font-weight: 800;
-    }
-    &.active {
-        background-color: yellow;
-        color: black;
-        font-weight: 800;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  transition: background-color, color, ease 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: $yellow;
+  &:hover {
+    background-color: $yellow;
+    color: black;
+    font-weight: 800;
+  }
+  &.active {
+    background-color: yellow;
+    color: black;
+    font-weight: 800;
+  }
 }
